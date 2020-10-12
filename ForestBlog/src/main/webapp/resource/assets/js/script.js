@@ -345,17 +345,51 @@ function increaseLikeCount() {
 }
 
 
-//ajax提交评论信息
-$("#comment_form").submit(function () {
+
+//convertNumber
+$("#numberToLetterFrom").submit(function () {
     $.ajax({
         async: false,
         type: "POST",
-        url: '/comment',
+        url: '/numberToLetter',
         contentType: "application/x-www-form-urlencoded; charset=utf-8",
-        data: $("#comment_form").serialize(),
+        data: {'number': $('#changeToLetter').val()},
         success: function (data) {
+            if (data.code === 0) {
+                // layui里面的layer
+                layer.msg("转换成功！");
+                console.log(data.data)
+                $("#convertedResult").text(data.data);
+            } else {
+                layer.msg(data.msg);
+            }
+
+        },
+        // 失败干啥
+        error: function () {
+        }
+    })
+    return false;
+})
+
+//ajax提交评论信息
+$("#comment_form").submit(function () {
+    $.ajax({
+        // 这个request是同步的, 异步就是不会block,同步会block,所以这个人,点一下,在成功前,那个按钮应该是灰色的,不能再点了
+        async: false,
+        // restful api, 方法是 post
+        type: "POST",
+        url: '/comment',
+        // http的header,也属于http请求的知识点
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        // http请求里面 的数据/内容 是啥, 就是把这个序列化
+        data: $("#comment_form").serialize(),
+        // 请求成功干啥
+        success: function (data /*成功后返回一个response的data*/) {
             if (data.code == 0) {
+                // layui里面的layer
                 layer.msg("评论成功！");
+                // 浏览器cookie里面的author entry,设置为 auother name的值
                 localStorage.setItem('author', $("#author_name").val());
                 localStorage.setItem('email', $("#author_email").val());
                 localStorage.setItem('url', $("#author_url").val());
@@ -366,6 +400,7 @@ $("#comment_form").submit(function () {
             }
 
         },
+        // 失败干啥
         error: function () {
         }
     })

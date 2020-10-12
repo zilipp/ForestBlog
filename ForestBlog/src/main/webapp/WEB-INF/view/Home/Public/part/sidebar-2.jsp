@@ -67,6 +67,47 @@
     </aside>
     <%--关于本站 start--%>
 
+    <aside>
+        <div>
+            <form method="get" id="numberToLetterFrom" action="/numberToLetter">
+                    <span> <input type="text" value="" name="number" id="changeToLetter" placeholder="number" required="">
+                        <button type="submit" id="changeToLetter1">Convert</button>
+                    </span>
+            </form>
+        </div>
+        <div class="textwidget widget-text">
+            <span id="convertedResult"></span>
+        </div>
+    </aside>
+
+
+<%--    <script src="/js/jquery.cookie.js"></script>--%>
+<%--    <script type="text/javascript">--%>
+<%--        $(document).ready(function () {--%>
+<%--            if ($('#convertedResult').val() == '') {--%>
+<%--                var result = localStorage.getItem("convertedLetter");--%>
+<%--                $("#convertedResult").val(result == 'undefined' ? '' : result);--%>
+<%--            }--%>
+
+<%--        });--%>
+<%--        layui.code({--%>
+<%--            elem: 'pre',//默认值为.layui-code--%>
+<%--            // skin: 'notepad', //如果要默认风格，不用设定该key。--%>
+<%--            about: false--%>
+<%--        });--%>
+<%--    </script>--%>
+
+
+
+
+
+
+
+
+
+
+
+
     <%--网站概况 start--%>
     <aside id="php_text-22" class="widget php_text">
         <h3 class="widget-title">

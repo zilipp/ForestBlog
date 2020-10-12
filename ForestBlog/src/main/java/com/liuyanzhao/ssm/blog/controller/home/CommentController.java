@@ -63,8 +63,10 @@ public class CommentController {
             articleService.updateCommentCount(article.getArticleId());
         } catch (Exception e) {
             e.printStackTrace();
+            // 请求失败
             return new JsonResult().fail();
         }
+        // 请求陈工
         return new JsonResult().ok();
     }
 
