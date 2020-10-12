@@ -80,34 +80,6 @@
         </div>
     </aside>
 
-
-<%--    <script src="/js/jquery.cookie.js"></script>--%>
-<%--    <script type="text/javascript">--%>
-<%--        $(document).ready(function () {--%>
-<%--            if ($('#convertedResult').val() == '') {--%>
-<%--                var result = localStorage.getItem("convertedLetter");--%>
-<%--                $("#convertedResult").val(result == 'undefined' ? '' : result);--%>
-<%--            }--%>
-
-<%--        });--%>
-<%--        layui.code({--%>
-<%--            elem: 'pre',//默认值为.layui-code--%>
-<%--            // skin: 'notepad', //如果要默认风格，不用设定该key。--%>
-<%--            about: false--%>
-<%--        });--%>
-<%--    </script>--%>
-
-
-
-
-
-
-
-
-
-
-
-
     <%--网站概况 start--%>
     <aside id="php_text-22" class="widget php_text">
         <h3 class="widget-title">
